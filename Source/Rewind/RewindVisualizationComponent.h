@@ -20,24 +20,19 @@ class REWIND_API URewindVisualizationComponent : public UInstancedStaticMeshComp
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this component's properties
+	
 	URewindVisualizationComponent();
-
-public:
-	// Clear all instances
 	virtual void ClearInstances() override;
 
 	// Assigns a static mesh to each transform in snapshots
 	void SetInstancesFromSnapshots(const TRingBuffer<FTransformAndVelocitySnapshot>& Snapshots);
 
-protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
-
-public:
 	// Time in seconds between each visualized mesh
 	UPROPERTY(EditDefaultsOnly, Category = "Rewind|Visualization")
 	float SecondsPerMesh = 1.0f / 30.0f;
+
+protected:
+	virtual void BeginPlay() override;
 
 private:
 	// Color used for this actor in debug visualization when `Rewind.VisualizeSnapshots 1` is set

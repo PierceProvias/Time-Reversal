@@ -26,7 +26,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFastForwardCompleted);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnTimeScrubStarted);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnTimeScrubCompleted);
 
-	// State snapshots used when rewinding transforms and velocity
+// State snapshots used when rewinding transforms and velocity
 USTRUCT()
 struct FTransformAndVelocitySnapshot
 {
